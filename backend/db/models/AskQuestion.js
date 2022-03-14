@@ -3,16 +3,17 @@ import mongoose from "mongoose";
 const AskQuestionSchema = new mongoose.Schema({
   name: {
     type: String,
-    required: true
+    required: true,
   },
   email: {
     type: String,
-    required: true
+    required: true,
   },
   question: {
     type: String,
-    required: true
+    required: true,
   },
+  comments: [{ comment: String, date: { type: Date, default: Date.now } }],
 });
 
 const AskQuestionModel = new mongoose.model("Ask Question", AskQuestionSchema);
